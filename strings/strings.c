@@ -72,12 +72,48 @@ size_t string_arrsize(string* array) {
     return size;
 }
 
-string string_replace(string src, const string a, const string b) {
-    //
+string string_concat(size_t num, ...) {
+    if (num < 1) return NULL;
+
+    va_list ap;
+    va_start(ap, num);
+
+    size_t len = 0, i;
+
+    for (i = 0; i < num; i++) {
+        const string s = va_arg(ap, string);
+        len += strlen(s);
+    }
+    va_end(ap);
+
+    string cat = malloc(len + 1);
+    if (cat == NULL) return NULL;
+
+    string dest = cat;
+    va_start(ap, num);
+
+    for (i = 0; i < num; i++, dest--) {
+        string src = va_arg(ap, string);
+        while (*dest++ = *src++);
+    }
+    va_end(ap);
+
+    return cat;
 }
 
-void string_concat(string *str, unsigned *len, ...) {
+string string_replace(string src, const string ini, const string fin) {
     //
+    return NULL;
 }
 
+void string_free(string str) {
+    free(str);
+}
 
+// hmm
+void string_freearr(string *arr) {
+    if (!arr) return;
+    string *curr;
+    for (curr = arr; *curr; curr++) free(*curr);
+    free(arr);
+}

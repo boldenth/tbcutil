@@ -12,6 +12,8 @@
 #define TRUE 1
 #define FALSE 0
 
+#define nullptr (void *)0
+
 // Useful macros
 #define DO_ONCE(expr) do {expr;} while(0)
 

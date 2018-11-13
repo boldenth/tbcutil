@@ -10,11 +10,13 @@ typedef char *string;
 string  string_dup(const string);
 string  string_copy(const string);
 string  string_trim(string);
-string  string_replace(string, const string, const string);
+string  string_replace(string, const string, const string);// this'll be annoying
 string *string_split(string, const char *);
 size_t  string_arrsize(string *);
-void    string_concat(string *, size_t, ...);// TODO: improve?
+string  string_concat(size_t, ...);
 void    string_toupper(string);
 void    string_tolower(string);
+void    string_free(string);
+void    string_freearr(string *);
 
 #endif // ___GUARD_STRINGS_H
