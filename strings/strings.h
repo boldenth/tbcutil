@@ -13,7 +13,7 @@ string  string_trim(string);
 string  string_replace(string, const string, const string);// this'll be annoying
 string *string_split(string, const char *);
 size_t  string_arrsize(string *);
-string  string_concat(size_t, ...);
+string  string_concat(size_t, ...);// extend to concat strings in array
 void    string_toupper(string);
 void    string_tolower(string);
 void    string_free(string);

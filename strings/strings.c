@@ -117,3 +117,14 @@ void string_freearr(string *arr) {
     for (curr = arr; *curr; curr++) free(*curr);
     free(arr);
 }
+
+/*
+int printf (const char * fmt, ...) {
+  va_list ap;
+  va_start(ap, fmt);
+  int rv = vprintf(fmt, ap);
+  va_end(ap);
+  return rv;
+}
+*/
+

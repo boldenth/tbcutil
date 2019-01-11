@@ -20,3 +20,7 @@ Most of the string functions are implemented optimally, but there are some funct
 
 TODO
 
+### [extra](extra)
+
+Here you will find random or quirky things that I find interesting and / or 
+noteworthy.
