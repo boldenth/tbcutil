@@ -18,5 +18,6 @@ void    string_toupper(string);
 void    string_tolower(string);
 void    string_free(string);
 void    string_freearr(string *);
+int     string_compare(const string, const string);
 
 #endif // ___GUARD_STRINGS_H

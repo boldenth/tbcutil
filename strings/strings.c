@@ -13,7 +13,7 @@ void string_tolower(string) {
 }
 
 string string_dup(const string str) {
-    if (str == NULL) str == "";
+    if (str == NULL) str = "";
 
     size_t len = strlen(str);
     string dup = (string)malloc(len + 1);
@@ -36,7 +36,7 @@ string string_trim(string str) {
 
     string trimmed = malloc(len + 1);
     memcpy(trimmed, str, len);
-    trimmed[len] = 0;
+    trimmed[len] = '\0';
 
     return trimmed;
 }
@@ -118,13 +118,13 @@ void string_freearr(string *arr) {
     free(arr);
 }
 
-/*
-int printf (const char * fmt, ...) {
-  va_list ap;
-  va_start(ap, fmt);
-  int rv = vprintf(fmt, ap);
-  va_end(ap);
-  return rv;
+int string_compare(const string str1, const string str2) {
+    for (char char1 = *str1,   char2 = *str2 
+         ;;   char1 = *str1++, char2 = *str2++) {
+        if (char1 != char2) return char1 < char2 ? -1 : 1;
+        if (!c1) break;
+    }
+    return 0;
 }
-*/
+
 
