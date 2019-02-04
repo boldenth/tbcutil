@@ -26,4 +26,6 @@
 
 #define LSB(x) ((x) ^ ((x) - 1) & (x)) // least significant bit
 
+#define CLAMP(val, min, max) val < min ? min : (val > max ? max : val)
+
 #endif // ___GUARD_GLOBAL_H
