@@ -16,7 +16,7 @@ string string_dup(const string str) {
     if (str == NULL) str = "";
 
     size_t len = strlen(str);
-    string dup = (string)malloc(len + 1);
+    string dup = (string)calloc(len + 1);
 
     if (dup != NULL) memcpy(dup, str, len + 1);
 
@@ -24,7 +24,7 @@ string string_dup(const string str) {
 }
 
 string string_copy(const string str) {
-    return strcpy(malloc(strlen(str) + 1), str);
+    return strcpy(calloc(strlen(str) + 1), str);
 }
 
 string string_trim(string str) {
@@ -34,7 +34,7 @@ string string_trim(string str) {
 
     while (len && (*(str + len - 1) == ' ' || *(str + len - 1) == '\t')) len--;
 
-    string trimmed = malloc(len + 1);
+    string trimmed = calloc(len + 1);
     memcpy(trimmed, str, len);
     trimmed[len] = '\0';
 
@@ -53,7 +53,7 @@ string * string_split(string str, const char *delims) {
         len = strcspn(str, delims);
 
         result = realloc(result, sizeof(string*) * (count + 1));
-        result[count] = malloc(len + 1);
+        result[count] = calloc(len + 1);
         memcpy(result[count], str, len);
         result[count][len] = 0;
 
@@ -86,7 +86,7 @@ string string_concat(size_t num, ...) {
     }
     va_end(ap);
 
-    string cat = malloc(len + 1);
+    string cat = calloc(len + 1);
     if (cat == NULL) return NULL;
 
     string dest = cat;
